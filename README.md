@@ -1,43 +1,63 @@
-# <%= slugname %>
+# NPB
 
-<!--
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
--->
+> (92 Bond Street) Node Package Boilerplate
 
-> <%= props.description %>
+Boilerplate that I use for my Node Package.
 
-## Keynote
+## Getting started
 
-<%= props.keynote %>
+In your directory, run:
 
-## Install
-
-```sh
-$ npm install --save <%= slugname %>
+```
+$ curl -fsSL https://github.com/92bondstreet/npb/archive/master.tar.gz | tar -xz --strip-components 2
 ```
 
+You can also `git clone` or [download](https://github.com/92bondstreet/npb/archive/master.zip) this repo and get contents of the `boilerplate` folder.
 
-## Usage
+## Pattern to replace
 
-```js
-var <%= slugname %> = require('<%= slugname %>');
+### README.md
 
-<%= slugname %>('92 Bond Street Node Package Boilerplate');
+Update following section:
+
+* Title with the `package-name`
+* Description
+* Keynote
+* Usage
+* License
+* badge(s) url
+
+
+### package.json
+
+Update the pattern `<%= %>` with the right value.
+
+### /lib/index.js
+
+Rename the file `/lib/index.js` to `/lib/package-name.js`
+
+### index.js
+
+Replace the export
+
+```
+module.exports = require('./lib/<%= slugname %>');
 ```
 
-```sh
-$ npm install --global <%= slugname %>
-$ <%= slugname %> --help
+with
+
+```
+module.exports = require('./lib/package-name');
 ```
 
-## License
+### cli.js
 
-<%= props.license %> © [<%= props.authorName %>](<%= props.authorUrl %>)
+Update the pattern `<%= %>` with the right value.
+
+### test/test.js
+
+* Update the pattern `<%= %>` with the right value.
+* Write tests.
 
 
-[npm-url]: https://npmjs.org/package/<%= slugname %>
-[npm-image]: https://badge.fury.io/js/<%= slugname %>.svg
-[travis-url]: https://travis-ci.org/<%= props.githubUsername %>/<%= slugname %>
-[travis-image]: https://travis-ci.org/<%= props.githubUsername %>/<%= slugname %>.svg?branch=master
-[daviddm-url]: https://david-dm.org/<%= props.githubUsername %>/<%= slugname %>.svg?theme=shields.io
-[daviddm-image]: https://david-dm.org/<%= props.githubUsername %>/<%= slugname %>
+MIT © [Yassine AZZOUT](http://yass.io)
