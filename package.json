@@ -1,0 +1,39 @@
+{
+  "name": "<%= slugname %>",
+  "version": "0.0.0",
+  "description": "<%= props.description %>",
+  "homepage": "<%= props.homepage %>",
+  "author": {
+    "name": "<%= props.authorName %>",
+    "email": "<%= props.authorEmail %>",
+    "url": "<%= props.authorUrl %>"
+  },
+  "repository": "<%= repoUrl %>",
+  "license": "<%= props.license %>",
+  "files": [
+    "index.js"
+    "cli.js"
+  ],
+  "keywords": [
+    "<%= slugname %>",
+    "<%= keywords %>"
+  ],
+  "dependencies": {
+    "meow": "^2.0.0"
+  },
+  "devDependencies": {
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^6.0.0",
+    "load-grunt-tasks": "^1.0.0",
+    "time-grunt": "^1.0.0",
+    "grunt-mocha-cli": "^1.11.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "bin": {
+    "<%= slugname %>": "cli.js"
+  }
+}
