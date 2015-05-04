@@ -41,8 +41,23 @@ module.exports = function (grunt) {
         files: '<%%= eslint.test.src %>',
         tasks: ['eslint:test', 'mochacli']
       }
+    },
+    mocha_istanbul: {
+      coverage: {
+        src: 'test',
+        options: {
+          mask: '*.js',
+          check: {
+            lines: 75,
+            statements: 75,
+            functions: 75
+          },
+          reportFormats: ['html']
+        }
+      }
     }
   });
 
   grunt.registerTask('default', ['eslint', 'mochacli']);
+  grunt.registerTask('test', ['mocha_istanbul']);
 };
